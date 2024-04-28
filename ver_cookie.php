@@ -6,9 +6,14 @@
   <title>Document</title>
 </head>
 <body>
-  <?php
-  setcookie("idioma", $_GET["idioma"], time() + 60);
-  header("Location:ver_cookie.php"); 
+  <?php 
+    if(!$_COOKIE["idioma"]){
+      header("Location:index.php");
+    }else if($_COOKIE["idioma"] == "es"){
+      header("Location:es.php");
+    }else{
+      header("Location:en.php");
+    }
   ?>
 </body>
 </html>

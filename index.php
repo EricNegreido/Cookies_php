@@ -6,13 +6,23 @@
   <title>Document</title>
 </head>
 <body>
+  <?php 
+    if(isset($_COOKIE["idioma"])){
+      if($_COOKIE["idioma"] == "es"){
+        header("Location:es.php");
+      }else{
+        header("Location:en.php");
+
+      }
+    }
+  ?>
   <table>
     <tr>
       <td colspan="2" align="center"> <h1> Elige Idioma</h1> </td>
     </tr>
     <tr>
-      <td align="center"> <a href="crerCookie?idiom=es"> Español </a></td>
-      <td align="center"><a href="crerCookie?idiom=en"> Ingles </a></td>
+      <td align="center"> <a href="crearCookie.php?idioma=es"> Español </a></td>
+      <td align="center"><a href="crearCookie.php?idioma=en"> Ingles </a></td>
     </tr>
   </table>
 </body>
